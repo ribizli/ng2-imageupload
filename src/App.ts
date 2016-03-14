@@ -20,7 +20,6 @@ export class App {
     };
     
     selected(imageResult: ImageResult) {
-        console.log(imageResult);
         this.src = imageResult.resized && imageResult.resized.dataURL || imageResult.dataURL;
     }
 }
