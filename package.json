@@ -8,8 +8,11 @@
     "serve": "http-server -c-1 .",
     "start": "npm-run-all -p watch serve",
     "prepublish": "tsc && copyfiles -u 1 dist/ImageUpload.* .",
-    "postpublish": "rimraf ImageUpload.*"
+    "clean": "rimraf ImageUpload.* dist"
   },
+  "tags": [
+      "ng2", "angular2", "image resize", "image upload"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ribizli/ng2-imageupload.git"
