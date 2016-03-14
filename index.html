@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng2-minimal</title>
+</head>
+<body>
+
+<my-app></my-app>
+
+</body>
+
+<script src="/node_modules/systemjs/dist/system.js"></script>
+<script src="/node_modules/rxjs/bundles/Rx.js"></script>
+<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+
+<script>
+    System.config({
+        packages: {        
+          dist: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+    System.import('dist/boot.js').catch(console.log.bind(console));
+</script>
+
+</html>
