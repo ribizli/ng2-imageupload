@@ -8,9 +8,11 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
