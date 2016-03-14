@@ -3,7 +3,7 @@ A component which resizes the selected file image
 
 # Usage 
 
-```
+```typescript
 import {Component} from 'angular2/core';
 import {ImageUpload, ImageResult, ResizeOptions}
   from 'ng-imageupload/ImageUpload';
@@ -37,7 +37,8 @@ export class App {
 
 ## event: `(imageSelected)`
 event fired (async) when the file input changes and the image's `dataURL` is calculated and the image is resized.
-```
+
+```typescript
 interface ImageResult {
     file: File;
     url: string;
