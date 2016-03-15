@@ -19,7 +19,7 @@ export interface ResizeOptions {
 }
 
 @Directive({
-    selector: '[image-upload]'
+    selector: 'input[type=file][image-upload]'
 })
 export class ImageUpload implements OnInit {
 
