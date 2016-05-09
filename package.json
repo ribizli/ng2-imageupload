@@ -1,11 +1,11 @@
 {
   "name": "ng2-imageupload",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A component which resizes the selected input file image",
   "main": "index.js",
   "scripts": {
     "watch": "tsc -w",
-    "xpostinstall": "typings install",
+    "typings": "typings install",
     "prepublish": "tsc",
     "clean": "rimraf src/**/*.js* src/**/*.d.ts index.js* index.d.ts"
   },
@@ -34,5 +34,7 @@
     "zone.js": "^0.6.6"
   },
   "dependencies": {},
-  "peerDependencies": {}
+  "peerDependencies": {
+    "@angular/core": "^2.0.0-rc.1"
+  }
 }
