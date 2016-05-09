@@ -1,4 +1,6 @@
-node_modules/
-dist/**
-src/**
-index.html
+node_modules
+typings
+*.ts
+!*.d.ts
+typings.json
+tsconfig.json

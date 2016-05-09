@@ -1,17 +1,19 @@
 {
   "name": "ng2-imageupload",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A component which resizes the selected input file image",
-  "main": "ImageUpload.js",
+  "main": "index.js",
   "scripts": {
     "watch": "tsc -w",
-    "serve": "http-server -c-1 .",
-    "start": "npm-run-all -p watch serve",
-    "prepublish": "tsc && copyfiles -u 1 dist/ImageUpload.* .",
-    "clean": "rimraf ImageUpload.* dist"
+    "xpostinstall": "typings install",
+    "prepublish": "tsc",
+    "clean": "rimraf src/**/*.js* src/**/*.d.ts index.js* index.d.ts"
   },
   "tags": [
-      "ng2", "angular2", "image resize", "image upload"
+    "ng2",
+    "angular2",
+    "image resize",
+    "image upload"
   ],
   "repository": {
     "type": "git",
@@ -24,15 +26,13 @@
   },
   "homepage": "https://github.com/ribizli/ng2-imageupload#readme",
   "devDependencies": {
-    "http-server": "^0.9.0",
-    "npm-run-all": "^1.5.3",
-    "typescript": "^1.8.0",
-    "angular2": "2.0.0-beta.9", 
-    "rxjs": "5.0.0-beta.2",
-    "systemjs": "~0.19.24",
+    "@angular/core": "^2.0.0-rc.1",
     "rimraf": "~2.5.2",
-    "copyfiles": "~0.2.1"
+    "rxjs": "^5.0.0-beta.6",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "zone.js": "^0.6.6"
   },
-  "dependencies": {
-  }
+  "dependencies": {},
+  "peerDependencies": {}
 }

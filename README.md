@@ -7,12 +7,13 @@ A component which resizes the selected input file image
 npm install ng2-imageupload
 ```
 
-Either include the `node_modules/ng2-imageupload/ImageUpload.js` file in your HTML or load it via SystemJs:
+Load it via SystemJs:
 
 ```
     System.config({
         packages: {        
           'ng2-imageupload': {
+              main: 'index.js',
               defaultExtension: 'js'
           }
         },
@@ -27,7 +28,7 @@ Either include the `node_modules/ng2-imageupload/ImageUpload.js` file in your HT
 ```typescript
 import {Component} from 'angular2/core';
 import {ImageUpload, ImageResult, ResizeOptions}
-  from 'ng-imageupload/ImageUpload';
+  from 'ng-imageupload';
 
 @Component({
     selector: 'my-app',

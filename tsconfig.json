@@ -1,5 +1,5 @@
 {
-  "version": "1.8.0",
+  "version": "1.8.10",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -8,11 +8,10 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "dist",
     "declaration": true
   },
-  "exclude": [
-    "node_modules",
-    "dist"
+  "files": [
+    "typings/main.d.ts",
+    "index.ts"
   ]
 }
