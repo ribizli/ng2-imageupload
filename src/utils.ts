@@ -16,6 +16,8 @@ function getResizeArea() {
         resizeArea = document.createElement('canvas');
         resizeArea.id = resizeAreaId;
         resizeArea.style.visibility = 'hidden';
+        resizeArea.style.position = 'absolute';
+        resizeArea.style.transform = 'translate(-1000px, 0)';
         document.body.appendChild(resizeArea);
     }
 

@@ -4,14 +4,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
     "declaration": true
-  },
-  "files": [
-    "typings/main.d.ts",
-    "index.ts"
-  ]
+  }
 }

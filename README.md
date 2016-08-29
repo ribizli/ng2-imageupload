@@ -23,39 +23,51 @@ Load it via SystemJs:
       });
 ```
 
-# Usage 
+# Usage
 
 ```typescript
-import {Component} from 'angular2/core';
-import {ImageUpload, ImageResult, ResizeOptions}
-  from 'ng-imageupload';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ImageUploadModule } from 'ng2-imageupload';
+
+import { AppComponent }  from './app.component';
+
+@NgModule({
+  imports: [ BrowserModule, ImageUploadModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+
+```typescript
+import { Component } from '@angular/core';
+import { ImageResult, ResizeOptions } from 'ng2-imageupload';
 
 @Component({
     selector: 'my-app',
     template: `
-      <img [src]="src" [hidden]="!src">
+      <img [src]="src" [hidden]="!src"><br>
       <input type="file" image-upload
         (imageSelected)="selected($event)"
-        [resizeOptions]="resizeOptions">
-    `,
-    directives: [ImageUpload]
+        [resizeOptions]="resizeOptions">`
 })
-export class App {
+export class AppComponent {
     src: string = "";
     resizeOptions: ResizeOptions = {
-        resizeMaxHeight: 64,
-        resizeMaxWidth: 64
+        resizeMaxHeight: 128,
+        resizeMaxWidth: 128
     };
-    
+
     selected(imageResult: ImageResult) {
-        this.src = imageResult.resized 
-          && imageResult.resized.dataURL
-          || imageResult.dataURL;
+        this.src = imageResult.resized
+            && imageResult.resized.dataURL
+            || imageResult.dataURL;
     }
 }
 ```
 # API
-## selector: `[image-upload]`
+## selector: `input[type=file][image-upload]`
 
 ## event: `(imageSelected)`
 event fired (async) when the file input changes and the image's `dataURL` is calculated and the image is resized.
