@@ -36,6 +36,9 @@ export function resizeImage(origImage: HTMLImageElement, {
     let height = origImage.height;
     let width = origImage.width;
 
+    resizeMaxHeight = resizeMaxHeight || resizeMaxWidth;
+    resizeMaxWidth = resizeMaxWidth || resizeMaxHeight;
+
     // calculate the width and height, constraining the proportions
     if (width > height) {
         if (width > resizeMaxWidth) {
