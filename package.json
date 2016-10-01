@@ -1,6 +1,6 @@
 {
   "name": "ng2-imageupload",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A component which resizes the selected input file image",
   "main": "index.js",
   "scripts": {
