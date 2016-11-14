@@ -13,12 +13,17 @@ const resizeAreaId = 'imageupload-resize-area';
 function getResizeArea() {
     let resizeArea = document.getElementById(resizeAreaId);
     if (!resizeArea) {
+        let wrap = document.createElement('div');
         resizeArea = document.createElement('canvas');
+        wrap.appendChild(resizeArea);
+        wrap.id = 'wrap-' + resizeAreaId;
+        wrap.style.position = 'relative';
+        wrap.style.overflow = 'hidden';
+        wrap.style.width = '0';
+        wrap.style.height = '0';
         resizeArea.id = resizeAreaId;
-        resizeArea.style.visibility = 'hidden';
         resizeArea.style.position = 'absolute';
-        resizeArea.style.transform = 'translate(-1000px, 0)';
-        document.body.appendChild(resizeArea);
+        document.body.appendChild(wrap);
     }
 
     return <HTMLCanvasElement>resizeArea;
