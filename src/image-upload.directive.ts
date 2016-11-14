@@ -25,10 +25,12 @@ export class ImageUploadDirective {
                 url: URL.createObjectURL(file)
             };
             let ext: string = file.name.split('.').pop();
-            if (!!this.allowedExtensions.length && this.allowedExtensions.indexOf(ext) === -1 ) {
+            if (this.allowedExtensions && this.allowedExtensions.length && this.allowedExtensions.indexOf(ext) === -1 ) {
                 result.error = 'Extension Not Allowed';
+                this.imageSelected.emit(result);
+            } else {
+                this.fileToDataURL(file, result).then(r => this.resize(r)).then(r => this.imageSelected.emit(r));
             }
-            this.fileToDataURL(file, result).then(r => this.resize(r)).then(r => this.imageSelected.emit(r));
         }
     }
 

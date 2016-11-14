@@ -76,6 +76,7 @@ event fired (async) when the file input changes and the image's `dataURL` is cal
 interface ImageResult {
     file: File;
     url: string;
+    error?: string;
     dataURL?: string;
     resized?: {
         dataURL: string;
@@ -92,3 +93,8 @@ interface ImageResult {
  - `resizeType`: default: `image/jpeg` 
 
 Always the longer side is used to decide on resize ratio.
+
+## property: `[allowedExtensions]`
+Array of allowed extensions (e.g. `[jpg, jpeg, png]`). If specified and an input file has different extension the
+`imageSelected` event is fired with the error field set to 'Extension Not Allowed'. `dataUrl` and `resize` not calculated
+at all.

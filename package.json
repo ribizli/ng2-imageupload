@@ -1,6 +1,6 @@
 {
   "name": "ng2-imageupload",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A component which resizes the selected input file image",
   "main": "index.js",
   "scripts": {
@@ -25,14 +25,14 @@
   },
   "homepage": "https://github.com/ribizli/ng2-imageupload#readme",
   "devDependencies": {
-    "@angular/core": "^2.0.1",
+    "@angular/core": "^2.1.2",
     "rimraf": "^2.5.4",
     "rxjs": "5.0.0-beta.12",
-    "typescript": "^2.0.3",
-    "zone.js": "^0.6.25"
+    "typescript": "^2.0.9",
+    "zone.js": "^0.6.26"
   },
   "dependencies": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.1"
+    "@angular/core": "^2.0.0"
   }
 }
