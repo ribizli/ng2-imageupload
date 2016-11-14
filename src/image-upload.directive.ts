@@ -12,6 +12,7 @@ export class ImageUploadDirective {
     @Output() imageSelected = new EventEmitter<ImageResult>();
 
     @Input() resizeOptions: ResizeOptions;
+    @Input() allowedExtensions: string[];
 
     constructor(private _elementref: ElementRef, private _renderer: Renderer) {
     }
@@ -23,6 +24,10 @@ export class ImageUploadDirective {
                 file: file,
                 url: URL.createObjectURL(file)
             };
+            let ext: string = file.name.split('.').pop();
+            if (!!this.allowedExtensions.length && this.allowedExtensions.indexOf(ext) === -1 ) {
+                result.error = 'Extension Not Allowed';
+            }
             this.fileToDataURL(file, result).then(r => this.resize(r)).then(r => this.imageSelected.emit(r));
         }
     }

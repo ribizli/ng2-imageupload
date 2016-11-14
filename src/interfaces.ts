@@ -2,6 +2,7 @@ export interface ImageResult {
     file: File;
     url: string;
     dataURL?: string;
+    error?: string;
     resized?: {
         dataURL: string;
         type: string;
