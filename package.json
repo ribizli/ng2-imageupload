@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "tsc -w",
-    "prepublish": "tsc",
+    "tsc": "tsc",
+    "aot": "rimraf aot && ngc -p tsconfig-aot.json",
     "clean": "rimraf src/**/*.js* src/**/*.d.ts index.js* index.d.ts"
   },
   "tags": [
@@ -25,11 +26,13 @@
   },
   "homepage": "https://github.com/ribizli/ng2-imageupload#readme",
   "devDependencies": {
-    "@angular/core": "^2.1.2",
+    "@angular/compiler": "^2.4.2",
+    "@angular/compiler-cli": "^2.4.2",
+    "@angular/core": "^2.4.1",
     "rimraf": "^2.5.4",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "^5.0.0",
     "typescript": "^2.0.9",
-    "zone.js": "^0.6.26"
+    "zone.js": "^0.7.2"
   },
   "dependencies": {},
   "peerDependencies": {
