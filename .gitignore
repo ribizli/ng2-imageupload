@@ -4,3 +4,4 @@ aot
 *.js.map
 *.d.ts
 .vscode
+*.metadata.json
