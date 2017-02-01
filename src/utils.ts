@@ -1,11 +1,12 @@
-import {ResizeOptions} from './interfaces';
+import { ResizeOptions } from './interfaces';
 
-export function createImage(url: string, cb: (i: HTMLImageElement) => void) {
-    var image = new Image();
-    image.onload = function() {
-        cb(image);
-    };
-    image.src = url;
+export function createImage(url: string) {
+    return new Promise<HTMLImageElement>((res, rej) => {
+        const image = new Image();
+        image.onload = () => res(image);
+        image.onerror = rej;
+        image.src = url;
+    });
 }
 
 const resizeAreaId = 'imageupload-resize-area';
@@ -35,7 +36,7 @@ export function resizeImage(origImage: HTMLImageElement, {
     resizeQuality = 0.7,
     resizeType = 'image/jpeg'
 }: ResizeOptions = {}) {
-    
+
     let canvas = getResizeArea();
 
     let height = origImage.height;
