@@ -11,7 +11,7 @@ Load it via SystemJs:
 
 ```
     System.config({
-        packages: {        
+        packages: {
           'ng2-imageupload': {
               main: 'index.js',
               defaultExtension: 'js'
@@ -90,9 +90,10 @@ interface ImageResult {
  - `resizeMaxHeight`
  - `resizeMaxWidth`
  - `resizeQuality`: default: `0.7`
- - `resizeType`: default: `image/jpeg` 
-
-Always the longer side is used to decide on resize ratio.
+ - `resizeType`: default: `image/jpeg`
+ - `resizeMethod`: default: `max`\
+    `max`: always the longer side is used to decide on resize ratio\
+    `contain`: largest possible size so that both width and height can fit in resizeMaxWidth **and** resizeMaxHeight
 
 ## property: `[allowedExtensions]`
 Array of allowed extensions (e.g. `['jpg', 'jpeg', 'png']`). If specified and an input file has different extension the
