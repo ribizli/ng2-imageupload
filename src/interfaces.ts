@@ -14,4 +14,5 @@ export interface ResizeOptions {
     resizeMaxWidth?: number;
     resizeQuality?: number;
     resizeType?: string;
+    resizeMethod?: string;
 }
