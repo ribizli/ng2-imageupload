@@ -98,3 +98,8 @@ Always the longer side is used to decide on resize ratio.
 Array of allowed extensions (e.g. `['jpg', 'jpeg', 'png']`). If specified and an input file has different extension the
 `imageSelected` event is fired with the error field set to 'Extension Not Allowed'. `dataUrl` and `resize` not calculated
 at all.
+
+## property: `[strictMode]`
+Boolean value that shows if the allowed extension can be considered at any cases of its symbols (e.g. `['jpg', 'png']`
+are allowed extensions, but with `strictMode === false` image with extensions like jPg, PNG and etc. can be uploaded 
+too). By default, the value of this input is equal to `true`
