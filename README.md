@@ -67,7 +67,7 @@ export class AppComponent {
 }
 ```
 # API
-## selector: `input[type=file][image-upload]`
+## selector: `input[type=file][imageUpload]`
 
 ## event: `(imageSelected)`
 event fired (async) when the file input changes and the image's `dataURL` is calculated and the image is resized.
@@ -84,6 +84,9 @@ interface ImageResult {
     }
 }
 ```
+
+If any error happens, the `error` field is set with an error message.
+(e.g. `'Extension Not Allowed'` or `'Image processing error'`)
 
 ## property: `[resizeOptions]`
 

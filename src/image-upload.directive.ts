@@ -7,7 +7,7 @@ import { ImageResult, ResizeOptions } from './interfaces';
 import { createImage, resizeImage } from './utils';
 
 @Directive({
-    selector: 'input[type=file][image-upload]'
+    selector: 'input[type=file][imageUpload]'
 })
 export class ImageUploadDirective {
 
