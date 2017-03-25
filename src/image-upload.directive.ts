@@ -14,20 +14,31 @@ export class ImageUploadDirective {
     @Output() imageSelected = new EventEmitter<ImageResult>();
 
     @Input() resizeOptions: ResizeOptions;
-    @Input() allowedExtensions: string[];
+    private _allowedExtensions: string[];
+    
+    @Input()
+    get allowedExtensions() {
+        return this._allowedExtensions;
+    }
+
+    set allowedExtensions(allowed: string[]) {
+        this._allowedExtensions = allowed && allowed.map(a => a.toLowerCase());
+    }
+
 
     constructor(private _elementref: ElementRef, private _renderer: Renderer) {
     }
 
     @HostListener('change', ['$event'])
     private readFiles(event) {
-        for (let file of event.target.files) {
+        for (let file of event.target.files as File[]) {
             let result: ImageResult = {
                 file: file,
                 url: URL.createObjectURL(file)
             };
             let ext: string = file.name.split('.').pop();
-            if (this.allowedExtensions && this.allowedExtensions.length && this.allowedExtensions.indexOf(ext) === -1) {
+            ext = ext && ext.toLowerCase();
+            if (ext && this.allowedExtensions && this.allowedExtensions.length && this.allowedExtensions.indexOf(ext) === -1) {
                 result.error = 'Extension Not Allowed';
                 this.imageSelected.emit(result);
             } else {
