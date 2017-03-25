@@ -24,19 +24,18 @@
   },
   "homepage": "https://github.com/ribizli/ng2-imageupload#readme",
   "devDependencies": {
-    "@angular/common": "^2.4.5",
-    "@angular/compiler": "^2.4.5",
-    "@angular/compiler-cli": "^2.4.5",
-    "@angular/core": "^2.4.5",
-    "@angular/platform-browser": "^2.4.5",
-    "@angular/platform-server": "^2.4.5",
-    "rimraf": "^2.5.4",
-    "rxjs": "^5.0.0",
-    "typescript": "^2.0.9",
-    "zone.js": "^0.7.2"
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.2.0",
+    "typescript": "^2.2.1",
+    "zone.js": "^0.8.5"
   },
   "dependencies": {},
   "peerDependencies": {
-    "@angular/core": "^2.0.0"
+    "@angular/core": "^4.0.0"
   }
 }
