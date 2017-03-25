@@ -42,20 +42,14 @@ export function resizeImage(origImage: HTMLImageElement, {
     let height = origImage.height;
     let width = origImage.width;
 
-    resizeMaxHeight = resizeMaxHeight || resizeMaxWidth;
-    resizeMaxWidth = resizeMaxWidth || resizeMaxHeight;
+    if (width > resizeMaxWidth) {
+        height = Math.round(height * resizeMaxWidth / width);
+        width = resizeMaxWidth;
+    }
 
-    // calculate the width and height, constraining the proportions
-    if (width > height) {
-        if (width > resizeMaxWidth) {
-            height = Math.round(height *= resizeMaxWidth / width);
-            width = resizeMaxWidth;
-        }
-    } else {
-        if (height > resizeMaxHeight) {
-            width = Math.round(width *= resizeMaxHeight / height);
-            height = resizeMaxHeight;
-        }
+    if (height > resizeMaxHeight) {
+        width = Math.round(width * resizeMaxHeight / height);
+        height = resizeMaxHeight;
     }
 
     canvas.width = width;
