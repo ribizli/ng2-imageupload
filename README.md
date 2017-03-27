@@ -48,7 +48,7 @@ import { ImageResult, ResizeOptions } from 'ng2-imageupload';
     selector: 'my-app',
     template: `
       <img [src]="src" [hidden]="!src"><br>
-      <input type="file" image-upload
+      <input type="file" imageUpload
         (imageSelected)="selected($event)"
         [resizeOptions]="resizeOptions">`
 })
