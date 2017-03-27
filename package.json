@@ -1,6 +1,6 @@
 {
   "name": "ng2-imageupload",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A component which resizes the selected input file image",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,6 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "@angular/core": "^4.0.0"
+    "@angular/core": ">= 2.0.0"
   }
 }
