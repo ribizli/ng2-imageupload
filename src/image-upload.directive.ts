@@ -15,7 +15,7 @@ export class ImageUploadDirective {
 
     @Input() resizeOptions: ResizeOptions;
     private _allowedExtensions: string[];
-    
+
     @Input()
     get allowedExtensions() {
         return this._allowedExtensions;
@@ -30,7 +30,7 @@ export class ImageUploadDirective {
     }
 
     @HostListener('change', ['$event'])
-    private readFiles(event) {
+    readFiles(event) {
         for (let file of event.target.files as File[]) {
             let result: ImageResult = {
                 file: file,
