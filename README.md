@@ -1,7 +1,7 @@
 # ng2-imageupload
 A component which resizes the selected input file image
 
-## This package is not maintained anymore, use ngx-image2dataurl instead!
+## This package is not maintained anymore, use [ngx-image2dataurl](https://www.npmjs.com/package/ngx-image2dataurl) instead!
 
 # Install
 
