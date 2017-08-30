@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import { ImageResult, ResizeOptions } from './interfaces';
-import { createImage, resizeImage } from './utils';
+import { createImage, resizeImage, resetOrientation } from './utils';
 
 @Directive({
     selector: 'input[type=file][imageUpload]'
@@ -54,7 +54,7 @@ export class ImageUploadDirective {
 
     private resize(result: ImageResult): Promise<ImageResult> {
         if (!this.resizeOptions) return Promise.resolve(result);
-        return createImage(result.url).then(image => {
+        return createImage(result.dataURL).then(image => {
             let dataUrl = resizeImage(image, this.resizeOptions);
             result.resized = {
                 dataURL: dataUrl,
@@ -68,8 +68,10 @@ export class ImageUploadDirective {
         return new Promise((resolve) => {
             let reader = new FileReader();
             reader.onload = function (e) {
-                result.dataURL = reader.result;
-                resolve(result);
+                resetOrientation(file.type, reader.result).then((dataURL) => {
+                    result.dataURL = dataURL;
+                    resolve(result);
+                });
             };
             reader.readAsDataURL(file);
         });
