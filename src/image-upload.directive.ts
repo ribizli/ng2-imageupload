@@ -1,6 +1,6 @@
 import {
     Directive, ElementRef,
-    OnInit, Input, Output, EventEmitter, Renderer, HostListener
+    OnInit, Input, Output, EventEmitter, Renderer2, HostListener
 } from '@angular/core';
 
 import { ImageResult, ResizeOptions } from './interfaces';
@@ -26,7 +26,7 @@ export class ImageUploadDirective {
     }
 
 
-    constructor(private _elementref: ElementRef, private _renderer: Renderer) {
+    constructor(private _elementref: ElementRef, private _renderer: Renderer2) {
     }
 
     @HostListener('change', ['$event'])
